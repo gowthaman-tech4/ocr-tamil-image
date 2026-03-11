@@ -43,13 +43,13 @@ Before running the script, you must have the **Tesseract OCR Engine** installed 
 
 ## 💻 How to Use
 
-Save your input image (like `my_document.jpg`) in this project folder. 
+Save your input image (like `my_document.jpg`) inside the `uploaded_images` folder. 
 
 Open your terminal (PowerShell/Command Prompt) here and run:
 
 ### Basic Command (Highly Recommended)
 ```bash
-python generate_from_image.py my_document.jpg 
+python generate_from_image.py uploaded_images/my_document.jpg 
 ```
 *This will extract the text and generate 5 augmented image variations for every word stage across the document.*
 *The output goes to `./dataset/extracted/` by default.*
@@ -58,7 +58,7 @@ python generate_from_image.py my_document.jpg
 You can control the output directory and exactly how many variants are made for each stage:
 
 ```bash
-python generate_from_image.py my_document.jpg --out_dir ./my_custom_folder/ --count_per_line 10
+python generate_from_image.py uploaded_images/my_document.jpg --out_dir ./my_custom_folder/ --count_per_line 10
 ```
 
 ### Script Arguments Details:
