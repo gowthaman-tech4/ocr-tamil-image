@@ -19,6 +19,10 @@ def extract_sentences_from_image(image_path, lang='tam'):
         print(f"Extracting text from {image_path} using Tesseract (lang={lang})...")
         # Explicitly set tesseract path for Windows
         pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+        
+        # Explicitly tell Tesseract where to find the language data files (tam.traineddata)
+        os.environ['TESSDATA_PREFIX'] = r'C:\Program Files\Tesseract-OCR\tessdata'
+        
         extracted_text = pytesseract.image_to_string(img, lang=lang)
         
         if not extracted_text.strip():
