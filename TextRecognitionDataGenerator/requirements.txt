@@ -1,0 +1,7 @@
+Pillow>=10.0.0
+requests>=2.20.0
+opencv-python
+tqdm
+arabic-reshaper
+python-bidi
+wikipedia

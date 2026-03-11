@@ -1,0 +1,28 @@
+from trdg.generators import GeneratorFromStrings
+import os
+
+# 1. Setup your Tamil strings and fonts
+tamil_strings = ["வணக்கம் உலகம்", "தமிழ் மொழி இனிமையானது", "OCR பயிற்சி தரவு"]
+font_folder = "./fonts/tamil/" # Path to your .ttf files
+output_dir = "./dataset/train/"
+
+if not os.path.exists(output_dir):
+    os.makedirs(output_dir)
+
+# 2. Initialize the Generator
+generator = GeneratorFromStrings(
+    strings=tamil_strings,
+    fonts=[os.path.join(font_folder, f) for f in os.listdir(font_folder) if f.endswith('.ttf')],
+    language="ta",
+    count=1000,         # Total images to generate
+    size=64,            # Height of the image
+    skewing_angle=2,    # Slight tilt to mimic real scans
+    blur=1,             # Mild blur
+    random_blur=True
+)
+
+# 3. Save the images
+for i, (img, lbl) in enumerate(generator):
+    img.save(f"{output_dir}/tamil_{i}.png")
+    with open(f"{output_dir}/tamil_{i}.txt", "w", encoding="utf-8") as f:
+        f.write(lbl)

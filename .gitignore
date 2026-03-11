@@ -1,0 +1,14 @@
+# Ignore datasets
+dataset/
+
+# Ignore Python
+__pycache__/
+*.pyc
+
+# Ignore logs
+*.log
+
+# Ignore sample images
+*.png
+*.jpg
+*.jpeg
