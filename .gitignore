@@ -1,5 +1,5 @@
-# Ignore datasets
-dataset/
+# Allow datasets now
+# dataset/
 
 # Ignore Python
 __pycache__/
