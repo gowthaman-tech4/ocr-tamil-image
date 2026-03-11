@@ -9,6 +9,3 @@ __pycache__/
 *.log
 
 # Ignore sample images
-*.png
-*.jpg
-*.jpeg
