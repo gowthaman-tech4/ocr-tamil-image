@@ -108,6 +108,7 @@ def generate_dataset(sentences, output_dir, font_dir, num_images_per_line=5):
             random_blur=True,       # Variable blur across images
             background_type=0,      # 0: Gaussian Noise, 1: Plain white, 2: Quasicrystal, 3: Image
             distorsion_type=0,      # Small distortions
+            word_split=True,        # Force Pillow to render full words so Tamil ligatures are shaped correctly via Raqm
         )
         
         # Save images and text labels
