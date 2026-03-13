@@ -66,6 +66,25 @@ python generate_from_image.py uploaded_images/my_document.jpg --out_dir ./my_cus
 - `--out_dir`: (Optional) The folder where the generated `.png` and `.txt` files will be saved.
 - `--count_per_line`: (Optional) The number of augmented image variations you want to generate for exactly each stage. The default is `5`.
 - `--fonts`: (Optional) The folder to pull `.ttf` Tamil fonts from. Default is `./fonts/tamil/`.
+- `--no_palm_leaf`: (Optional) Disable the palm leaf manuscript variant generation.
+
+---
+
+## 🌿 Palm Leaf Manuscript Mode (ஓலைச்சுவடி)
+
+By default, the script **automatically generates a historical palm leaf manuscript variant** for every single image! Each variant features:
+* Aged **yellowish-brown palm leaf texture** background
+* **Sepia-toned** color grading
+* Dark brown **stylus-etched** text color
+* Random **scratches and grain noise** for authenticity
+* Subtle **vignette** (darkened edges)
+
+This effectively **doubles your dataset** — every word stage gets both a modern scan AND a historical palm leaf version!
+
+To disable this feature, use `--no_palm_leaf`:
+```bash
+python generate_from_image.py uploaded_images/my_document.jpg --no_palm_leaf
+```
 
 ---
 
@@ -73,6 +92,9 @@ python generate_from_image.py uploaded_images/my_document.jpg --out_dir ./my_cus
 Inside the output directory you specify, you will find paired files like:
 
 * `extracted_data_0.png` (The generated synthetic image)
+* `extracted_data_0_palmleaf.png` (The palm leaf manuscript variant)
 * `extracted_data_0.txt` (A text file containing the exact text inside the image)
+* `extracted_data_0_palmleaf.txt` (Matching label for the palm leaf variant)
 
 Enjoy effortlessly building automated OCR dataset pipelines!
+
